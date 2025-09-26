@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Q-BOCC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="favicon.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#f5f5f5">
@@ -20,6 +20,15 @@
             color: #222;
             min-height: 100vh;
             box-sizing: border-box;
+        }
+        .title {
+            margin: 0;
+            padding: 18px 16px 8px 16px;
+            background: #f5f5f5;
+            font-size: 1.6em;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 900; /* Dikker */
+            letter-spacing: 0.8px;
         }
         .header {
             padding: 18px 16px 8px 16px;
@@ -100,25 +109,32 @@
             font-size: 0.98em;
         }
         .nav-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100vw;
-            background: #ffffff;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 56px;
-            z-index: 100;
+        position: fixed;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        width: 200px;
+        background: #ffffff;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 56px;
+         z-index: 100;
+        border-radius: 10px;
         }
         .nav-item {
             flex: 1;
             text-align: center;
-            color: #ffffff;
-            font-size: 1.2em;
         }
-        .nav-item.active {
-            color: #1976d2;
+        .nav-icon {
+        width: 28px;
+        height: 28px;
+        display: inline-block;
+        }
+        .nav-icon-menu {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
         }
         @media (min-width: 800px) {
             body {
@@ -134,36 +150,20 @@
     </script>
 </head>
 <body>
-    <div class="header"><strong>Discover</strong></div>
+    <h1 class="title">Home</h1>
     <div class="icon-grid">
         <div class="icon-item">
             <div class="icon-circle">
                 <!-- Vervang src door je eigen afbeelding -->
                 <img src="Assets/icons/static_wallpapers.png" alt="Static Wallpapers" />
-                <!-- <span>🎨</span> fallback emoji indien nodig -->
             </div>
             <div class="icon-label">Static</div>
         </div>
         <div class="icon-item">
             <div class="icon-circle">
                 <img src="Assets/icons/live_wallpapers.png" alt="Live Wallpapers" />
-                <!-- <span>🖼️</span> -->
             </div>
             <div class="icon-label">Live</div>
-        </div>
-        <div class="icon-item">
-            <div class="icon-circle">
-                <img src="icons/fonts.png" alt="Fonts" />
-                <!-- <span>🔤</span> -->
-            </div>
-            <div class="icon-label">Fonts</div>
-        </div>
-        <div class="icon-item">
-            <div class="icon-circle">
-                <img src="icons/sounds.png" alt="Sounds" />
-                <!-- <span>🔔</span> -->
-            </div>
-            <div class="icon-label">Sounds</div>
         </div>
     </div>
     <div class="themes-section">
@@ -190,11 +190,16 @@
             </div>
         </div>
     </div>
-    <div class="nav-bar">
-        <div class="nav-item active">🏠</div>
-        <div class="nav-item">🔍</div>
-        <div class="nav-item">❤️</div>
-        <div class="nav-item">👤</div>
+   <div class="nav-bar">
+    <div class="nav-item active">
+        <img src="Assets/navbar/home_active.png" alt="Home" class="nav-icon" />
     </div>
+    <div class="nav-item">
+        <img src="Assets/navbar/favourites_inactive.png" alt="Favourites" class="nav-icon" />
+    </div>
+    <div class="nav-item">
+        <img src="Assets/navbar/menu_inactive.png" alt="Menu" class="nav-icon-menu" />
+    </div>
+</div>
 </body>
 </html>
