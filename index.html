@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Q-BOCC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .header {
+            padding: 18px 16px 8px 16px;
+            background: #fff;
+            font-size: 1.6em;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04)s;
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            padding: 16px;
+            background: #fff;
+        }
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 6px;
+            font-size: 1.5em;
+        }
+        .icon-label {
+            font-size: 0.95em;
+            color: #444;
+        }
+        .themes-section {
+            margin-top: 16px;
+            padding: 0 8px;
+        }
+        .themes-title {
+            font-size: 1.1em;
+            font-weight: 500;
+            margin: 12px 0 8px 8px;
+        }
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .theme-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .theme-img {
+            width: 100%;
+            height: 90px;
+            object-fit: cover;
+            background: #ddd;
+        }
+        .theme-info {
+            padding: 8px 10px;
+            font-size: 0.98em;
+        }
+        .nav-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            background: #fff;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 56px;
+            z-index: 100;
+        }
+        .nav-item {
+            flex: 1;
+            text-align: center;
+            color: #888;
+            font-size: 1.2em;
+        }
+        .nav-item.active {
+            color: #1976d2;
+        }
+        @media (min-width: 800px) {
+            body {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        // Redirect desktop users
+        if (window.innerWidth > 800) {
+            window.location.href = "desktop.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">Themes</div>
+    <div class="icon-grid">
+        <div class="icon-item">
+            <div class="icon-circle">🎨</div>
+            <div class="icon-label">Themes</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-circle">🖼️</div>
+            <div class="icon-label">Wallpapers</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-circle">🔤</div>
+            <div class="icon-label">Fonts</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-circle">🔔</div>
+            <div class="icon-label">Sounds</div>
+        </div>
+    </div>
+    <div class="themes-section">
+        <div class="themes-title">Aanbevolen thema's</div>
+        <div class="themes-grid">
+            <div class="theme-card">
+                <img class="theme-img" src="https://via.placeholder.com/160x90?text=Theme+1" alt="Theme 1">
+                <div class="theme-info">Galaxy Blue</div>
+            </div>
+            <div class="theme-card">
+                <img class="theme-img" src="https://via.placeholder.com/160x90?text=Theme+2" alt="Theme 2">
+                <div class="theme-info">Minimal White</div>
+            </div>
+        </div>
+        <div class="themes-title">Populaire thema's</div>
+        <div class="themes-grid">
+            <div class="theme-card">
+                <img class="theme-img" src="https://via.placeholder.com/160x90?text=Theme+3" alt="Theme 3">
+                <div class="theme-info">Dark Mode</div>
+            </div>
+            <div class="theme-card">
+                <img class="theme-img" src="https://via.placeholder.com/160x90?text=Theme+4" alt="Theme 4">
+                <div class="theme-info">Nature Green</div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-bar">
+        <div class="nav-item active">🏠</div>
+        <div class="nav-item">🔍</div>
+        <div class="nav-item">❤️</div>
+        <div class="nav-item">👤</div>
+    </div>
+</body>
+</html>
