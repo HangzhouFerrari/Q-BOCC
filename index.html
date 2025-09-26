@@ -23,7 +23,7 @@
         }
         .header {
             padding: 18px 16px 8px 16px;
-            background: #fff;
+            background: #f5f5f5;
             font-size: 1.6em;
             font-family: 'Red Hat Display', sans-serif;
             font-weight: 900; /* Dikker */
@@ -35,7 +35,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
             padding: 16px;
-            background: #fff;
+            background: #f5f5f5;
         }
         .icon-item {
             display: flex;
@@ -46,13 +46,19 @@
         .icon-circle {
             width: 48px;
             height: 48px;
-            background: #e0e0e0;
+            background: #ffffff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 6px;
             font-size: 1.5em;
+        }
+        .icon-circle img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            display: block;
         }
         .icon-label {
             font-size: 0.95em;
@@ -79,7 +85,6 @@
         .theme-card {
             background: #fff;
             border-radius: 12px;
-            box-shadow: 0 1px 6px rgba(0,0,0,0.07);
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -110,7 +115,7 @@
         .nav-item {
             flex: 1;
             text-align: center;
-            color: #888;
+            color: #ffffff;
             font-size: 1.2em;
         }
         .nav-item.active {
@@ -133,19 +138,32 @@
     <div class="header"><strong>Discover</strong></div>
     <div class="icon-grid">
         <div class="icon-item">
-            <div class="icon-circle">🎨</div>
+            <div class="icon-circle">
+                <!-- Vervang src door je eigen afbeelding -->
+                <img src="icons/themes.png" alt="Themes" />
+                <!-- <span>🎨</span> fallback emoji indien nodig -->
+            </div>
             <div class="icon-label">Themes</div>
         </div>
         <div class="icon-item">
-            <div class="icon-circle">🖼️</div>
+            <div class="icon-circle">
+                <img src="icons/wallpapers.png" alt="Wallpapers" />
+                <!-- <span>🖼️</span> -->
+            </div>
             <div class="icon-label">Wallpapers</div>
         </div>
         <div class="icon-item">
-            <div class="icon-circle">🔤</div>
+            <div class="icon-circle">
+                <img src="icons/fonts.png" alt="Fonts" />
+                <!-- <span>🔤</span> -->
+            </div>
             <div class="icon-label">Fonts</div>
         </div>
         <div class="icon-item">
-            <div class="icon-circle">🔔</div>
+            <div class="icon-circle">
+                <img src="icons/sounds.png" alt="Sounds" />
+                <!-- <span>🔔</span> -->
+            </div>
             <div class="icon-label">Sounds</div>
         </div>
     </div>
