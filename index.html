@@ -56,7 +56,7 @@
             width: 72px;
             height: 72px;
             background: #ffffff;
-            border-radius: 50%;
+            border-radius: 25%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -86,23 +86,31 @@
             font-weight: 800;
         }
         .themes-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-direction: row;
             gap: 12px;
             margin-bottom: 18px;
+            overflow-x: auto;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE and Edge */
+        }
+        .themes-grid::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
         }
         .theme-card {
             background: #fff;
-            border-radius: 12px;
+            border-radius: 24px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            width: 135px;
+            flex: 0 0 auto;
         }
         .theme-img {
             width: 100%;
-            height: 100px;
             object-fit: fill;
             background: #ffffff;
+            height: 100%;
         }
         .theme-info {
             padding: 8px 10px;
@@ -154,7 +162,6 @@
     <div class="icon-grid">
         <div class="icon-item">
             <div class="icon-circle">
-                <!-- Vervang src door je eigen afbeelding -->
                 <img src="Assets/icons/static_wallpapers.png" alt="Static Wallpapers" />
             </div>
             <div class="icon-label">Static</div>
@@ -167,11 +174,15 @@
         </div>
     </div>
     <div class="themes-section">
-        <div class="themes-title">Aanbevolen thema's</div>
+        <div class="themes-title">Wallpaper collections</div>
         <div class="themes-grid">
             <div class="theme-card">
-                <img class="theme-img" src="https://via.placeholder.com/160x90?text=Theme+1" alt="Theme 1">
-                <div class="theme-info">Galaxy Blue</div>
+                <img class="theme-img" src="Library/static wallpapers/4000_wallpapers_collection/cover.png" alt="Theme 1">
+                <div class="theme-info">4000 wallpapers</div>
+            </div>
+            <div class="theme-card">
+                <img class="theme-img" src="https://via.placeholder.com/160x90?text=Theme+2" alt="Theme 2">
+                <div class="theme-info">Minimal White</div>
             </div>
             <div class="theme-card">
                 <img class="theme-img" src="https://via.placeholder.com/160x90?text=Theme+2" alt="Theme 2">
