@@ -29,6 +29,11 @@
             font-family: 'Red Hat Display', sans-serif;
             font-weight: 900; /* Dikker */
             letter-spacing: 0.8px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
         .header {
             padding: 18px 16px 8px 16px;
@@ -40,6 +45,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.04)s;
         }
         .icon-grid {
+            margin-top: 56px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
@@ -105,6 +111,7 @@
             flex-direction: column;
             width: 135px;
             flex: 0 0 auto;
+            position: relative;
         }
         .theme-img {
             width: 100%;
@@ -144,7 +151,7 @@
             z-index: 99;
             background: linear-gradient(
                 to top,
-                rgb(204, 204, 204) 0%,
+                rgba(245, 245, 245, 1) 20%,
                 rgba(0, 0, 0, 0) 100%
             );
         }
@@ -168,6 +175,41 @@
             object-fit: contain;
             vertical-align: middle;
 
+        }
+        .collection-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.92);
+            border-radius: 12px;
+            padding: 2px 8px 2px 4px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+            z-index: 2;
+            gap: 4px;
+        }
+        .collection-badge::before {
+            content: "";
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-right: 3px;
+            background-image: url('Assets/icons/collection.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .collection-badge::after {
+            content: "Collection";
+            font-weight: bold;
+            font-size: 12px;
+            color: #222;
+        }
+        .bottomspace {
+            height: 100px;
         }
         @media (min-width: 800px) {
             body {
@@ -199,26 +241,7 @@
         </div>
     </div>
     <div class="themes-section">
-        <div class="themes-title">Wallpaper collections</div>
-        <div class="themes-grid">
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/collections/4000_wallpapers/cover.png" alt="Theme 1">
-                <div class="theme-info">4000 wallpapers</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/collections/ColorOS_rounds/cover.png" alt="Theme 2">
-                <div class="theme-info">ColorOS rounds</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/collections/Light_blocks/cover.png" alt="Theme 2">
-                <div class="theme-info">Light blocks</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/collections/Desert/cover.png" alt="Theme 2">
-                <div class="theme-info">Desert</div>
-            </div>
-        </div>
-        <div class="themes-title">Populaire thema's</div>
+        <div class="themes-title">Recently added</div>
         <div class="themes-grid">
             <div class="theme-card">
                 <img class="theme-img" src="https://via.placeholder.com/160x90?text=Theme+3" alt="Theme 3">
@@ -227,6 +250,29 @@
             <div class="theme-card">
                 <img class="theme-img" src="https://via.placeholder.com/160x90?text=Theme+4" alt="Theme 4">
                 <div class="theme-info">Nature Green</div>
+            </div>
+        </div>
+        <div class="themes-title">Wallpaper collections</div>
+        <div class="themes-grid">
+            <div class="theme-card" data-collection="true">
+                <div class="collection-badge"></div>
+                <img class="theme-img" src="Library/static wallpapers/collections/4000_wallpapers/cover.png" alt="4000 wallpapers">
+                <div class="theme-info">4000 wallpapers</div>
+            </div>
+            <div class="theme-card" data-collection="true">
+                <div class="collection-badge"></div>
+                <img class="theme-img" src="Library/static wallpapers/collections/ColorOS_rounds/cover.png" alt="ColorOS rounds">
+                <div class="theme-info">ColorOS rounds</div>
+            </div>
+            <div class="theme-card" data-collection="true">
+                <div class="collection-badge"></div>
+                <img class="theme-img" src="Library/static wallpapers/collections/Light_blocks/cover.png" alt="Light blocks">
+                <div class="theme-info">Light blocks</div>
+            </div>
+            <div class="theme-card" data-collection="true">
+                <div class="collection-badge"></div>
+                <img class="theme-img" src="Library/static wallpapers/collections/Desert/cover.png" alt="Desert">
+                <div class="theme-info">Desert</div>
             </div>
         </div>
     </div>
@@ -242,5 +288,8 @@
     </div>
 </div>
 <div class="nav-bar-fade"></div>
+<div class="bottomspace"></div>
+</body>
+</html>
 </body>
 </html>
