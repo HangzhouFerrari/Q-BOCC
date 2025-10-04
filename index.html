@@ -80,43 +80,22 @@
             color: #444;
             font-family: 'Red Hat Display', sans-serif;
         }
+        .featured-header-wrapper {
+            padding-left: 8px;
+          padding-right: 8px;
+          box-sizing: border-box;
+          width: 100%;
+        }
         .featured-header {
-            width: 320px;
-            height: 160px;
+            width: 100%;
+            max-width: 960px;
+            aspect-ratio: 2 / 1;
             background: #ffffff;
             justify-content: center;
             align-items: center;
             display: flex;
             border-radius: 24px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 40px;
-        }
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(10%);
-            background: rgba(255,255,255,0.7);
-            border: none;
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            font-size: 1.5em;
-            cursor: pointer;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-        }
-        .arrow-left {
-            left: 120px;
-        }
-        .arrow-right {
-            right: 120px;
-        }
-        .arrow:active {
-            background: rgba(200,200,200,0.9);
+            margin-top: 16px;
         }
         .themes-section {
             margin-top: 16px;
@@ -278,10 +257,11 @@
             <div class="icon-label">Live</div>
         </div>
     </div>
-    <div class="featured-header" id="featuredHeader">
-        <button class="arrow arrow-left" id="arrowLeft">&#8592;</button>
-        <button class="arrow arrow-right" id="arrowRight">&#8594;</button>
-        </div>
+
+    <div class="featured-header-wrapper">
+  <div class="featured-header" id="featuredHeader"></div>
+</div>
+
     <div class="themes-section">
         <div class="themes-title">Recently added</div>
         <div class="themes-grid">
@@ -401,14 +381,6 @@ header.addEventListener('touchend', (e) => {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     updateHeader();
   }
-});
-document.getElementById('arrowLeft').addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateHeader();
-});
-document.getElementById('arrowRight').addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateHeader();
 });
 </script>
 </body>
