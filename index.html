@@ -80,6 +80,44 @@
             color: #444;
             font-family: 'Red Hat Display', sans-serif;
         }
+        .featured-header {
+            width: 320px;
+            height: 160px;
+            background: #ffffff;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            border-radius: 24px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 40px;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(10%);
+            background: rgba(255,255,255,0.7);
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .arrow-left {
+            left: 120px;
+        }
+        .arrow-right {
+            right: 120px;
+        }
+        .arrow:active {
+            background: rgba(200,200,200,0.9);
+        }
         .themes-section {
             margin-top: 16px;
             padding: 0 8px;
@@ -240,21 +278,13 @@
             <div class="icon-label">Live</div>
         </div>
     </div>
+    <div class="featured-header" id="featuredHeader">
+        <button class="arrow arrow-left" id="arrowLeft">&#8592;</button>
+        <button class="arrow arrow-right" id="arrowRight">&#8594;</button>
+        </div>
     <div class="themes-section">
         <div class="themes-title">Recently added</div>
         <div class="themes-grid">
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Golden_festive/cover.png" alt="Golden festive">
-                <div class="theme-info">Golden festive</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Red_festive/cover.png" alt="Red festive">
-                <div class="theme-info">Red festive</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Blue_festive/cover.png" alt="Blue festive">
-                <div class="theme-info">Blue festive</div>
-            </div>
             <div class="theme-card">
                 <img class="theme-img" src="Library/static wallpapers/standard/Golden_fireworks/cover.png" alt="Golden fireworks">
                 <div class="theme-info">Golden fireworks</div>
@@ -283,6 +313,18 @@
                 <img class="theme-img" src="Library/static wallpapers/standard/Sunset_mountain/cover.png" alt="Sunset mountain">
                 <div class="theme-info">Sunset mountain</div>
             </div>
+            <div class="theme-card">
+                <img class="theme-img" src="Library/static wallpapers/standard/Golden_festive/cover.png" alt="Golden festive">
+                <div class="theme-info">Golden festive</div>
+            </div>
+            <div class="theme-card">
+                <img class="theme-img" src="Library/static wallpapers/standard/Red_festive/cover.png" alt="Red festive">
+                <div class="theme-info">Red festive</div>
+            </div>
+            <div class="theme-card">
+                <img class="theme-img" src="Library/static wallpapers/standard/Blue_festive/cover.png" alt="Blue festive">
+                <div class="theme-info">Blue festive</div>
+            </div>
         </div>
         <div class="themes-title">Wallpaper collections</div>
         <div class="themes-grid">
@@ -300,6 +342,11 @@
                 <div class="collection-badge"></div>
                 <img class="theme-img" src="Library/static wallpapers/collections/Light_blocks/cover.png" alt="Light blocks">
                 <div class="theme-info">Light blocks</div>
+            </div>
+            <div class="theme-card" data-collection="true">
+                <div class="collection-badge"></div>
+                <img class="theme-img" src="Library/static wallpapers/collections/Colorful_radiance/cover.png" alt="Colorful radiance">
+                <div class="theme-info">Colorful radiance</div>
             </div>
             <div class="theme-card" data-collection="true">
                 <div class="collection-badge"></div>
@@ -323,5 +370,46 @@
 <div class="bottomspace"></div>
 </body>
 </html>
+<script>
+const images = [
+  'Featured/4-10-2025.png',
+  'Featured/4-10-2025(2).png',
+];
+let currentIndex = 0;
+
+const header = document.getElementById('featuredHeader');
+function updateHeader() {
+  header.style.backgroundImage = `url('${images[currentIndex]}')`;
+  header.style.backgroundSize = 'cover';
+  header.style.backgroundPosition = 'center';
+}
+updateHeader();
+
+// Swipe detectie
+let startX = 0;
+header.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
+header.addEventListener('touchend', (e) => {
+  let endX = e.changedTouches[0].clientX;
+  if (endX < startX - 30) {
+    // Swipe naar links
+    currentIndex = (currentIndex + 1) % images.length;
+    updateHeader();
+  } else if (endX > startX + 30) {
+    // Swipe naar rechts
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateHeader();
+  }
+});
+document.getElementById('arrowLeft').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateHeader();
+});
+document.getElementById('arrowRight').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateHeader();
+});
+</script>
 </body>
 </html>
