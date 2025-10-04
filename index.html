@@ -423,5 +423,13 @@ header.addEventListener('touchend', (e) => {
       document.querySelector('.main-content').classList.add('page-in');
     });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const mainContent = document.querySelector(".main-content");
+  requestAnimationFrame(() => { 
+    mainContent.classList.add("page-in");
+  });
+});
+</script>
 </body>
 </html>
