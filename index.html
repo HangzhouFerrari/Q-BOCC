@@ -431,5 +431,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+<script>
+    function triggerAnimation() {
+      const mainContent = document.querySelector(".main-content");
+      if (!mainContent) return;
+      mainContent.classList.remove("page-in");
+      requestAnimationFrame(() => {
+        mainContent.classList.add("page-in");
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", triggerAnimation);
+    window.addEventListener("pageshow", triggerAnimation);
+    </script>
 </body>
 </html>
