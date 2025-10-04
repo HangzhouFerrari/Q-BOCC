@@ -428,19 +428,19 @@ function triggerAnimation() {
   const mainContent = document.querySelector(".main-content");
   if (!mainContent) return;
 
-  // eerst de class verwijderen → terug naar beginstaat
+  // reset naar beginstaat
   mainContent.classList.remove("page-in");
 
-  // heel even wachten zodat de browser de reset tekent
+  // korte delay zodat browser reset kan renderen
   requestAnimationFrame(() => {
     mainContent.classList.add("page-in");
   });
 }
 
-// bij eerste load
+// eerste keer laden
 document.addEventListener("DOMContentLoaded", triggerAnimation);
 
-// ook bij terugknop / forward nav (bfcache herstel)
+// ook bij terug/forward op mobiel (bfcache)
 window.addEventListener("pageshow", triggerAnimation);
 </script>
 </body>
