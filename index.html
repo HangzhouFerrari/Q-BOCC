@@ -424,25 +424,24 @@ header.addEventListener('touchend', (e) => {
     });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+function triggerAnimation() {
   const mainContent = document.querySelector(".main-content");
-  requestAnimationFrame(() => { 
+  if (!mainContent) return;
+
+  // eerst de class verwijderen → terug naar beginstaat
+  mainContent.classList.remove("page-in");
+
+  // heel even wachten zodat de browser de reset tekent
+  requestAnimationFrame(() => {
     mainContent.classList.add("page-in");
   });
-});
-</script>
-<script>
-    function triggerAnimation() {
-      const mainContent = document.querySelector(".main-content");
-      if (!mainContent) return;
-      mainContent.classList.remove("page-in");
-      requestAnimationFrame(() => {
-        mainContent.classList.add("page-in");
-      });
-    }
+}
 
-    document.addEventListener("DOMContentLoaded", triggerAnimation);
-    window.addEventListener("pageshow", triggerAnimation);
-    </script>
+// bij eerste load
+document.addEventListener("DOMContentLoaded", triggerAnimation);
+
+// ook bij terugknop / forward nav (bfcache herstel)
+window.addEventListener("pageshow", triggerAnimation);
+</script>
 </body>
 </html>

@@ -22,6 +22,7 @@
             align-items: center;
             justify-content: center;
             display: flex;
+            flex-direction: column;
         }
         .main-content.page-in {
             opacity: 1;
@@ -46,6 +47,20 @@
             left: 0;
             right: 0;
             z-index: 1000;
+        }
+        .title2 {
+            margin: 0;
+            padding: 18px 16px 8px 16px;
+            background: #f5f5f5;
+            font-size: 16px;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 600; /* Dikker */
+            letter-spacing: 0.8px;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            text-align: center;
         }
         .header {
             padding: 18px 16px 8px 16px;
@@ -133,6 +148,7 @@ a, button, .icon-item, .theme-card {
     <h1 class="title">Error</h1>
     <div class="main-content">
         <img src="Assets/icons/error.png" class="error-icon" alt="Error">
+    <h1 class="title2">The page you're trying to reach cannot be found. </h1>
     </div>
     <div class="nav-bar">
         <div class="nav-item">
@@ -152,9 +168,24 @@ a, button, .icon-item, .theme-card {
         </div>
     </div>
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelector('.main-content').classList.add('page-in');
-    });
+function triggerAnimation() {
+  const mainContent = document.querySelector(".main-content");
+  if (!mainContent) return;
+
+  // eerst de class verwijderen → terug naar beginstaat
+  mainContent.classList.remove("page-in");
+
+  // heel even wachten zodat de browser de reset tekent
+  requestAnimationFrame(() => {
+    mainContent.classList.add("page-in");
+  });
+}
+
+// bij eerste load
+document.addEventListener("DOMContentLoaded", triggerAnimation);
+
+// ook bij terugknop / forward nav (bfcache herstel)
+window.addEventListener("pageshow", triggerAnimation);
 </script>
 </body>
 </html>
