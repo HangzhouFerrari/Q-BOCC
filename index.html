@@ -428,7 +428,7 @@ function triggerAnimation() {
   const mainContent = document.querySelector(".main-content");
   if (!mainContent) return;
 
-  // reset naar beginstaat
+  // Reset naar beginstaat
   mainContent.classList.remove("page-in");
 
   // korte delay zodat browser reset kan renderen
@@ -437,11 +437,18 @@ function triggerAnimation() {
   });
 }
 
-// eerste keer laden
+// Eerste load of bfcache herstel
 document.addEventListener("DOMContentLoaded", triggerAnimation);
-
-// ook bij terug/forward op mobiel (bfcache)
 window.addEventListener("pageshow", triggerAnimation);
+
+// Extra: ook bij alle link-kliks naar interne pagina’s
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    const mainContent = document.querySelector(".main-content");
+    if (!mainContent) return;
+    mainContent.classList.remove("page-in");
+  });
+});
 </script>
 </body>
 </html>
