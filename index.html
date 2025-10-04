@@ -21,6 +21,15 @@
             min-height: 100vh;
             box-sizing: border-box;
         }
+        .main-content {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.5s cubic-bezier(.4,0,.2,1), transform 0.5s cubic-bezier(.4,0,.2,1);
+        }
+        .main-content.page-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
         .title {
             margin: 0;
             padding: 18px 16px 8px 16px;
@@ -243,126 +252,131 @@
 </head>
 <body>
     <h1 class="title">Home</h1>
-    <div class="icon-grid">
-        <div class="icon-item">
-            <div class="icon-circle">
-                <img src="Assets/icons/static_wallpapers.png" alt="Static Wallpapers" />
+    <div class="main-content">
+        <div class="icon-grid">
+            <div class="icon-item">
+                <div class="icon-circle">
+                    <img src="Assets/icons/static_wallpapers.png" alt="Static Wallpapers" />
+                </div>
+                <div class="icon-label">Static</div>
             </div>
-            <div class="icon-label">Static</div>
-        </div>
-        <div class="icon-item">
-            <div class="icon-circle">
-                <img src="Assets/icons/live_wallpapers.png" alt="Live Wallpapers" />
+            <div class="icon-item">
+                <div class="icon-circle">
+                    <img src="Assets/icons/live_wallpapers.png" alt="Live Wallpapers" />
+                </div>
+                <div class="icon-label">Live</div>
             </div>
-            <div class="icon-label">Live</div>
         </div>
-    </div>
 
-    <div class="featured-header-wrapper">
-  <div class="featured-header" id="featuredHeader"></div>
-</div>
+        <div class="featured-header-wrapper">
+          <div class="featured-header" id="featuredHeader"></div>
+        </div>
 
-    <div class="themes-section">
-        <div class="themes-title">Recently added</div>
-        <div class="themes-grid">
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Origin_wave/cover.png" alt="Origin wave">
-                <div class="theme-info">Origin wave</div>
+        <div class="themes-section">
+            <div class="themes-title">Recently added</div>
+            <div class="themes-grid">
+                <div class="theme-card">
+                    <img class="theme-img" src="Library/static wallpapers/standard/Origin_wave/cover.png" alt="Origin wave">
+                    <div class="theme-info">Origin wave</div>
+                </div>
+                <div class="theme-card">
+                    <img class="theme-img" src="Library/static wallpapers/standard/Aqua_ring/cover.png" alt="Aqua ring">
+                    <div class="theme-info">Aqua ring</div>
+                </div>
+                <div class="theme-card">
+                    <img class="theme-img" src="Library/static wallpapers/standard/Golden_fireworks/cover.png" alt="Golden fireworks">
+                    <div class="theme-info">Golden fireworks</div>
+                </div>
+                <div class="theme-card">
+                    <img class="theme-img" src="Library/static wallpapers/standard/Red_fireworks/cover.png" alt="Red fireworks">
+                    <div class="theme-info">Red fireworks</div>
+                </div>
+                <div class="theme-card">
+                    <img class="theme-img" src="Library/static wallpapers/standard/Blue_fireworks/cover.png" alt="Blue fireworks">
+                    <div class="theme-info">Blue fireworks</div>
+                </div>
+                <div class="theme-card">
+                    <img class="theme-img" src="Library/static wallpapers/standard/Flat_mountain/cover.png" alt="Flat mountain">
+                    <div class="theme-info">Flat mountain</div>
+                </div>
+                <div class="theme-card">
+                    <img class="theme-img" src="Library/static wallpapers/standard/Grassy_mountain/cover.png" alt="Grassy mountain">
+                    <div class="theme-info">Grassy mountain</div>
+                </div>
+                <div class="theme-card">
+                    <img class="theme-img" src="Library/static wallpapers/standard/Sunshine_mountain/cover.png" alt="Sunshine mountain">
+                    <div class="theme-info">Sunshine mountain</div>
+                </div>
+                <div class="theme-card">
+                    <img class="theme-img" src="Library/static wallpapers/standard/Sunset_mountain/cover.png" alt="Sunset mountain">
+                    <div class="theme-info">Sunset mountain</div>
+                </div>
+                <div class="theme-card">
+                    <img class="theme-img" src="Library/static wallpapers/standard/Golden_festive/cover.png" alt="Golden festive">
+                    <div class="theme-info">Golden festive</div>
+                </div>
+                <div class="theme-card">
+                    <img class="theme-img" src="Library/static wallpapers/standard/Red_festive/cover.png" alt="Red festive">
+                    <div class="theme-info">Red festive</div>
+                </div>
+                <div class="theme-card">
+                    <img class="theme-img" src="Library/static wallpapers/standard/Blue_festive/cover.png" alt="Blue festive">
+                    <div class="theme-info">Blue festive</div>
+                </div>
             </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Aqua_ring/cover.png" alt="Aqua ring">
-                <div class="theme-info">Aqua ring</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Golden_fireworks/cover.png" alt="Golden fireworks">
-                <div class="theme-info">Golden fireworks</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Red_fireworks/cover.png" alt="Red fireworks">
-                <div class="theme-info">Red fireworks</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Blue_fireworks/cover.png" alt="Blue fireworks">
-                <div class="theme-info">Blue fireworks</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Flat_mountain/cover.png" alt="Flat mountain">
-                <div class="theme-info">Flat mountain</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Grassy_mountain/cover.png" alt="Grassy mountain">
-                <div class="theme-info">Grassy mountain</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Sunshine_mountain/cover.png" alt="Sunshine mountain">
-                <div class="theme-info">Sunshine mountain</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Sunset_mountain/cover.png" alt="Sunset mountain">
-                <div class="theme-info">Sunset mountain</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Golden_festive/cover.png" alt="Golden festive">
-                <div class="theme-info">Golden festive</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Red_festive/cover.png" alt="Red festive">
-                <div class="theme-info">Red festive</div>
-            </div>
-            <div class="theme-card">
-                <img class="theme-img" src="Library/static wallpapers/standard/Blue_festive/cover.png" alt="Blue festive">
-                <div class="theme-info">Blue festive</div>
+            <div class="themes-title">Wallpaper collections</div>
+            <div class="themes-grid">
+                <div class="theme-card" data-collection="true">
+                    <div class="collection-badge"></div>
+                    <img class="theme-img" src="Library/static wallpapers/collections/4000_wallpapers/cover.png" alt="4000 wallpapers">
+                    <div class="theme-info">4000 wallpapers</div>
+                </div>
+                <div class="theme-card" data-collection="true">
+                    <div class="collection-badge"></div>
+                    <img class="theme-img" src="Library/static wallpapers/collections/Silk/cover.png" alt="Silk">
+                    <div class="theme-info">Silk</div>
+                </div>
+                <div class="theme-card" data-collection="true">
+                    <div class="collection-badge"></div>
+                    <img class="theme-img" src="Library/static wallpapers/collections/ColorOS_rounds/cover.png" alt="ColorOS rounds">
+                    <div class="theme-info">ColorOS rounds</div>
+                </div>
+                <div class="theme-card" data-collection="true">
+                    <div class="collection-badge"></div>
+                    <img class="theme-img" src="Library/static wallpapers/collections/Light_blocks/cover.png" alt="Light blocks">
+                    <div class="theme-info">Light blocks</div>
+                </div>
+                <div class="theme-card" data-collection="true">
+                    <div class="collection-badge"></div>
+                    <img class="theme-img" src="Library/static wallpapers/collections/Colorful_radiance/cover.png" alt="Colorful radiance">
+                    <div class="theme-info">Colorful radiance</div>
+                </div>
+                <div class="theme-card" data-collection="true">
+                    <div class="collection-badge"></div>
+                    <img class="theme-img" src="Library/static wallpapers/collections/Desert/cover.png" alt="Desert">
+                    <div class="theme-info">Desert</div>
+                </div>
             </div>
         </div>
-        <div class="themes-title">Wallpaper collections</div>
-        <div class="themes-grid">
-            <div class="theme-card" data-collection="true">
-                <div class="collection-badge"></div>
-                <img class="theme-img" src="Library/static wallpapers/collections/4000_wallpapers/cover.png" alt="4000 wallpapers">
-                <div class="theme-info">4000 wallpapers</div>
-            </div>
-            <div class="theme-card" data-collection="true">
-                <div class="collection-badge"></div>
-                <img class="theme-img" src="Library/static wallpapers/collections/Silk/cover.png" alt="Silk">
-                <div class="theme-info">Silk</div>
-            </div>
-            <div class="theme-card" data-collection="true">
-                <div class="collection-badge"></div>
-                <img class="theme-img" src="Library/static wallpapers/collections/ColorOS_rounds/cover.png" alt="ColorOS rounds">
-                <div class="theme-info">ColorOS rounds</div>
-            </div>
-            <div class="theme-card" data-collection="true">
-                <div class="collection-badge"></div>
-                <img class="theme-img" src="Library/static wallpapers/collections/Light_blocks/cover.png" alt="Light blocks">
-                <div class="theme-info">Light blocks</div>
-            </div>
-            <div class="theme-card" data-collection="true">
-                <div class="collection-badge"></div>
-                <img class="theme-img" src="Library/static wallpapers/collections/Colorful_radiance/cover.png" alt="Colorful radiance">
-                <div class="theme-info">Colorful radiance</div>
-            </div>
-            <div class="theme-card" data-collection="true">
-                <div class="collection-badge"></div>
-                <img class="theme-img" src="Library/static wallpapers/collections/Desert/cover.png" alt="Desert">
-                <div class="theme-info">Desert</div>
-            </div>
+    </div>
+    <div class="nav-bar">
+        <div class="nav-item active">
+            <img src="Assets/navbar/home_active.png" alt="Home" class="nav-icon" />
+        </div>
+        <div class="nav-item">
+            <a href="favourites.html" style="display:inline-block;width:100%;height:100%;">
+                <img src="Assets/navbar/favourites_inactive.png" alt="Favourites" class="nav-icon" />
+            </a>
+        </div>
+        <div class="nav-item">
+            <a href="menu.html" style="display:inline-block;width:100%;height:100%;">
+                <img src="Assets/navbar/menu_inactive.png" alt="Menu" class="nav-icon-menu" />
+            </a>
         </div>
     </div>
-   <div class="nav-bar">
-    <div class="nav-item active">
-        <img src="Assets/navbar/home_active.png" alt="Home" class="nav-icon" />
-    </div>
-    <div class="nav-item">
-        <img src="Assets/navbar/favourites_inactive.png" alt="Favourites" class="nav-icon" />
-    </div>
-    <div class="nav-item">
-        <img src="Assets/navbar/menu_inactive.png" alt="Menu" class="nav-icon-menu" />
-    </div>
-</div>
-<div class="nav-bar-fade"></div>
-<div class="bottomspace"></div>
-</body>
-</html>
+    <div class="nav-bar-fade"></div>
+    <div class="bottomspace"></div>
+
 <script>
 const images = [
   'Featured/4-10-2025.png',
@@ -395,6 +409,11 @@ header.addEventListener('touchend', (e) => {
     updateHeader();
   }
 });
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.main-content').classList.add('page-in');
+    });
 </script>
 </body>
 </html>
