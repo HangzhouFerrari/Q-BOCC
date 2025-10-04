@@ -21,6 +21,7 @@
             transition: opacity 0.5s cubic-bezier(.4,0,.2,1), transform 0.5s cubic-bezier(.4,0,.2,1);
             align-items: center;
             justify-content: center;
+            display: flex;
         }
         .main-content.page-in {
             opacity: 1;
@@ -132,6 +133,23 @@ a, button, .icon-item, .theme-card {
     <h1 class="title">Error</h1>
     <div class="main-content">
         <img src="Assets/icons/error.png" class="error-icon" alt="Error">
+    </div>
+    <div class="nav-bar">
+        <div class="nav-item">
+            <a href="index.html" style="display:inline-block;width:100%;height:100%;">
+                <img src="Assets/navbar/home_inactive.png" alt="Home" class="nav-icon" />
+            </a>
+        </div>
+        <div class="nav-item">
+            <a href="favourites.html" style="display:inline-block;width:100%;height:100%;">
+                <img src="Assets/navbar/favourites_inactive.png" alt="Favourites" class="nav-icon" />
+            </a>
+        </div>
+        <div class="nav-item">
+            <a href="menu.html" style="display:inline-block;width:100%;height:100%;">
+                <img src="Assets/navbar/menu_inactive.png" alt="Menu" class="nav-icon-menu" />
+            </a>
+        </div>
     </div>
 <script>
     window.addEventListener('DOMContentLoaded', () => {
