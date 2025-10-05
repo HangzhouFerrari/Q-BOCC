@@ -176,17 +176,24 @@ function triggerAnimation() {
   // Reset naar beginstaat
   mainContent.classList.remove("page-in");
 
-  // korte delay zodat browser reset kan renderen
-  requestAnimationFrame(() => {
-    mainContent.classList.add("page-in");
-  });
+  // Forceer reflow zodat animatie opnieuw kan starten
+  void mainContent.offsetWidth;
+
+  // Start animatie opnieuw
+  mainContent.classList.add("page-in");
 }
 
-// Eerste load of bfcache herstel
+// Eerste load
 document.addEventListener("DOMContentLoaded", triggerAnimation);
-window.addEventListener("pageshow", triggerAnimation);
 
-// Extra: ook bij alle link-kliks naar interne pagina’s
+// Als pagina uit de bfcache komt (terugnavigatie)
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    triggerAnimation();
+  }
+});
+
+// Ook bij klik op interne links animatie verwijderen (voor overgang)
 document.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     const mainContent = document.querySelector(".main-content");
