@@ -45,13 +45,46 @@
         }
         .bg-top {
             position: relative;
-            height: 50px;
-            width: 100%;
+            height: clamp(45px, 6vw, 60px);
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: auto;
             max-width: 1000px;
             background: #ffffff;
-            border-radius: 30px 30px 5px 5px;
+            border-radius: 20px 20px 5px 5px;
             pointer-events: none;
             z-index: 1;
+            padding: 0px 16px;
+            margin: 0 8px;
+        }
+        .bg-bottom {
+            position: relative;
+            height: clamp(45px, 6vw, 60px);
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: auto;
+            max-width: 1000px;
+            background: #ffffff;
+            border-radius: 5px 5px 20px 20px;
+            pointer-events: none;
+            z-index: 1;
+            padding: 0px 16px;
+            margin: 0 8px 16px 8px;
+        }
+        .option-icon {
+            width: clamp(28px, 5vw, 36px);
+            height: clamp(28px, 5vw, 36px);
+            flex-shrink: 0;
+        }
+        .option-text {
+            font-size: clamp(16px, 4vw 36px);
+            font-weight: 600;
+            color: #222222;
+            white-space: nowrap;
         }
         .title {
             margin: 0;
@@ -189,8 +222,14 @@ a, button, .icon-item, .theme-card {
         <div class="menu1">
             <div class="option">
                 <div class="bg-top">
-                    <img src="Assets/icons/static_wallpapers.png" alt="Static Wallpapers" style="margin-left:8px;margin-top:8px;width:36px;height:36px;vertical-align:middle;margin-right:8px;" />
-                    <span style="padding-top:8px;font-size:20px;font-weight:600;vertical-align:middle;">Browse static wallpapers</span>
+                    <img src="Assets/icons/static_wallpapers.png" alt="Static Wallpapers" class="option-icon" />
+                    <span class="option-text">Browse static wallpapers</span>
+                </div>
+            </div>
+            <div class="option" style="margin-top: 2px;">
+                <div class="bg-bottom">
+                    <img src="Assets/icons/live_wallpapers.png" alt="Live Wallpapers" class="option-icon" />
+                    <span class="option-text">Browse live wallpapers</span>
                 </div>
             </div>
         </div>
@@ -247,6 +286,6 @@ document.querySelectorAll('a').forEach(link => {
     mainContent.classList.remove("page-in");
   });
 });
-</script>s
+</script>
 </body>
 </html>
