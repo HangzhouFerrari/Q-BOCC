@@ -1,0 +1,98 @@
+[
+  {
+    "titel": "Blue festive",
+    "afbeelding": "Library/static wallpapers/standard/Blue_festive/cover.png",
+    "link": "Library/static wallpapers/standard/Blue_festive/item.html",
+    "datumToegevoegd": "2025-10-02",
+    "volgorde": 2,
+    "categorie": ["recently added"]
+  },
+  {
+    "titel": "Red festive",
+    "afbeelding": "Library/static wallpapers/standard/Red_festive/cover.png",
+    "link": "Library/static wallpapers/standard/Red_festive/item.html",
+    "datumToegevoegd": "2025-10-02",
+    "volgorde": 1,
+    "categorie": ["recently added"]
+  },
+  {
+    "titel": "Golden festive",
+    "afbeelding": "Library/static wallpapers/standard/Golden_festive/cover.png",
+    "link": "Library/static wallpapers/standard/Golden_festive/item.html",
+    "datumToegevoegd": "2025-10-02",
+    "volgorde": 3,
+    "categorie": ["recently added"]
+  },
+  {
+    "titel": "Sunset mountain",
+    "afbeelding": "Library/static wallpapers/standard/Sunset_mountain/cover.png",
+    "link": "Library/static wallpapers/standard/Sunset_mountain/item.html",
+    "datumToegevoegd": "2025-10-02",
+    "volgorde": 1,
+    "categorie": ["recently added"]
+  },
+  {
+    "titel": "Sunshine mountain",
+    "afbeelding": "Library/static wallpapers/standard/Sunshine_mountain/cover.png",
+    "link": "Library/static wallpapers/standard/Sunshine_mountain/item.html",
+    "datumToegevoegd": "2025-10-02",
+    "volgorde": 1,
+    "categorie": ["recently added"]
+  },
+  {
+    "titel": "Grassy mountain",
+    "afbeelding": "Library/static wallpapers/standard/Grassy_mountain/cover.png",
+    "link": "Library/static wallpapers/standard/Grassy_mountain/item.html",
+    "datumToegevoegd": "2025-10-02",
+    "volgorde": 1,
+    "categorie": ["recently added"]
+  },
+  {
+    "titel": "Flat mountain",
+    "afbeelding": "Library/static wallpapers/standard/Flat_mountain/cover.png",
+    "link": "Library/static wallpapers/standard/Flat_mountain/item.html",
+    "datumToegevoegd": "2025-10-02",
+    "volgorde": 1,
+    "categorie": ["recently added"]
+  },
+  {
+    "titel": "Blue fireworks",
+    "afbeelding": "Library/static wallpapers/standard/Blue_fireworks/cover.png",
+    "link": "Library/static wallpapers/standard/Blue_fireworks/item.html",
+    "datumToegevoegd": "2025-10-02",
+    "volgorde": 1,
+    "categorie": ["recently added"]
+  },
+  {
+    "titel": "Red fireworks",
+    "afbeelding": "Library/static wallpapers/standard/Red_fireworks/cover.png",
+    "link": "Library/static wallpapers/standard/Red_fireworks/item.html",
+    "datumToegevoegd": "2025-10-02",
+    "volgorde": 1,
+    "categorie": ["recently added"]
+  },
+  {
+    "titel": "Golden fireworks",
+    "afbeelding": "Library/static wallpapers/standard/Golden_fireworks/cover.png",
+    "link": "Library/static wallpapers/standard/Golden_fireworks/item.html",
+    "datumToegevoegd": "2025-10-02",
+    "volgorde": 1,
+    "categorie": ["recently added"]
+  },
+  {
+    "titel": "Aqua ring",
+    "afbeelding": "Library/static wallpapers/standard/Aqua_ring/cover.png",
+    "link": "Library/static wallpapers/standard/Aqua_ring/item.html",
+    "datumToegevoegd": "2025-10-02",
+    "volgorde": 1,
+    "categorie": ["recently added"]
+  },
+  {
+    "titel": "Origin wave",
+    "afbeelding": "Library/static wallpapers/standard/Origin_wave/cover.png",
+    "link": "Library/static wallpapers/standard/Origin_wave/item.html",
+    "datumToegevoegd": "2025-10-02",
+    "volgorde": 1,
+    "categorie": ["recently added"]
+  },
+]

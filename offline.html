@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
-  <title>Q-BOCC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="favicon.png">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#f5f5f5">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Q-BOCC">
-    <style>
-        body {
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta name="theme-color" content="#f5f5f5">
+    <title>Q-BOCC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.png">
+        <style>
+            body {
             margin: 0;
             font-family: 'Red Hat Display', sans-serif;
             background: #f5f5f5;
@@ -25,74 +20,20 @@
             opacity: 0;
             transform: translateX(40px);
             transition: opacity 0.5s cubic-bezier(.4,0,.2,1), transform 0.5s cubic-bezier(.4,0,.2,1);
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
         }
         .main-content.page-in {
             opacity: 1;
             transform: translateX(0);
         }
-        .menu1 {
-            display: flex;
-            flex-direction: column;
-            margin-top: 80px;
-            padding: 16px;
+        .error-icon {
             width: 100%;
-            box-sizing: border-box;
-        }
-        .menu2 {
-            display: flex;
-            flex-direction: column;
-            margin-top: 16px;
-            padding: 16px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .option {
-            align-items: right;
-            justify-content: space-between;
-            z-index: 2;
-        }
-        .bg-top {
-            position: relative;
-            height: clamp(45px, 6vw, 60px);
-            gap: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            width: auto;
-            max-width: 1000px;
-            background: #ffffff;
-            border-radius: 20px 20px 5px 5px;
-            pointer-events: none;
-            z-index: 1;
-            padding: 0px 16px;
-            margin: 0 8px;
-        }
-        .bg-bottom {
-            position: relative;
-            height: clamp(45px, 6vw, 60px);
-            gap: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            width: auto;
-            max-width: 1000px;
-            background: #ffffff;
-            border-radius: 5px 5px 20px 20px;
-            pointer-events: none;
-            z-index: 1;
-            padding: 0px 16px;
-            margin: 0 8px 16px 8px;
-        }
-        .option-icon {
-            width: clamp(28px, 5vw, 36px);
-            height: clamp(28px, 5vw, 36px);
-            flex-shrink: 0;
-        }
-        .option-text {
-            font-size: clamp(16px, 4vw 36px);
-            font-weight: 600;
-            color: #222222;
-            white-space: nowrap;
+            max-width: 100px;
+            aspect-ratio: 411 / 295;
+            margin-top: 120px;
         }
         .title {
             margin: 0;
@@ -108,6 +49,20 @@
             right: 0;
             z-index: 1000;
         }
+        .title2 {
+            margin: 0;
+            padding: 18px 16px 8px 16px;
+            background: #f5f5f5;
+            font-size: 16px;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 600; /* Dikker */
+            letter-spacing: 0.8px;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            text-align: center;
+        }
         .header {
             padding: 18px 16px 8px 16px;
             background: #f5f5f5;
@@ -115,6 +70,7 @@
             font-family: 'Red Hat Display', sans-serif;
             font-weight: 900; /* Dikker */
             letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
         .nav-bar {
         position: fixed;
@@ -161,7 +117,7 @@
         vertical-align: middle;
         transition: transform 0.2s;
         }
-        .nav-icon:active {
+         .nav-icon:active {
             transform: scale(0.7);
             transition: transform 0.1s;
         }
@@ -177,41 +133,6 @@
             transform: scale(0.7);
             transition: transform 0.1s;
         }
-        .collection-badge {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            display: flex;
-            align-items: center;
-            background: rgba(255,255,255,0.92);
-            border-radius: 12px;
-            padding: 2px 8px 2px 4px;
-            font-size: 12px;
-            font-weight: bold;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-            z-index: 2;
-            gap: 4px;
-        }
-        .collection-badge::before {
-            content: "";
-            display: inline-block;
-            width: 14px;
-            height: 14px;
-            margin-right: 3px;
-            background-image: url('Assets/icons/collection.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        .collection-badge::after {
-            content: "Collection";
-            font-weight: bold;
-            font-size: 12px;
-            color: #222;
-        }
-        .bottomspace {
-            height: 100px;
-        }
         @media (min-width: 800px) {
             body {
                 display: none;
@@ -225,8 +146,8 @@ a, button, .icon-item, .theme-card {
   -webkit-focus-ring-color: transparent;
   outline: none;
 }
-    </style>
-    <script>
+        </style>
+        <script>
         // Redirect desktop users
         if (window.innerWidth > 800) {
             window.location.href = "desktop.html";
@@ -234,30 +155,10 @@ a, button, .icon-item, .theme-card {
     </script>
 </head>
 <body>
-    <h1 class="title">Menu</h1>
+    <h1 class="title">Error</h1>
     <div class="main-content">
-        <div class="menu1">
-            <div class="option">
-                <div class="bg-top">
-                    <img src="Assets/icons/static_wallpapers.png" alt="Static Wallpapers" class="option-icon" />
-                    <span class="option-text">Browse static wallpapers</span>
-                </div>
-            </div>
-            <div class="option" style="margin-top: 2px;">
-                <div class="bg-bottom">
-                    <img src="Assets/icons/live_wallpapers.png" alt="Live Wallpapers" class="option-icon" />
-                    <span class="option-text">Browse live wallpapers</span>
-                </div>
-            </div>
-        </div>
-        <div class="menu2">
-            <div class="option">
-                <div class="bg-top">
-                    <img src="Assets/icons/collection.png" alt="My Collection" class="option-icon" />
-                    <span class="option-text">App theme</span>
-                    </div>
-              </div>
-        </div>
+        <img src="Assets/icons/no-wifi.png" class="error-icon" alt="Error">
+    <h1 class="title2">Could not fetch themes. Please check your internet connection.</h1>
     </div>
     <div class="nav-bar">
         <div class="nav-item">
@@ -272,12 +173,10 @@ a, button, .icon-item, .theme-card {
         </div>
         <div class="nav-item">
             <a href="menu.html" style="display:inline-block;width:100%;height:100%;">
-                <img src="Assets/navbar/menu_active.png" alt="Menu" class="nav-icon-menu" />
+                <img src="Assets/navbar/menu_inactive.png" alt="Menu" class="nav-icon-menu" />
             </a>
         </div>
     </div>
-    <div class="nav-bar-fade"></div>
-    <div class="bottomspace"></div>
 <script>
 function triggerAnimation() {
   const mainContent = document.querySelector(".main-content");
@@ -311,15 +210,6 @@ document.querySelectorAll('a').forEach(link => {
     mainContent.classList.remove("page-in");
   });
 });
-</script>
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(() => console.log('✅ Service Worker geregistreerd'))
-      .catch((err) => console.log('❌ Service Worker fout:', err));
-  });
-}
 </script>
 </body>
 </html>
